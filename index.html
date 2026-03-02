@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arenaweb Booking System</title>
+    <title>Sistema de Reservas Arenaweb</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <style>
         * {
@@ -653,53 +653,53 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-calendar-check"></i> Arenaweb Booking System</h1>
-            <p>Book your appointment with time slot selection</p>
+            <h1><i class="fas fa-calendar-check"></i> Sistema de Reservas Arenaweb</h1>
+            <p>Reserva tu cita seleccionando un horario</p>
         </div>
 
         <div class="form-container">
             <!-- Toggle between Form and Chat -->
             <div class="toggle-container">
-                <span class="toggle-label active" id="form-label">📋 Booking Form</span>
+                <span class="toggle-label active" id="form-label">📋 Formulario de Reserva</span>
                 <div class="toggle-switch" id="mode-toggle">
                     <div class="toggle-knob"></div>
                 </div>
-                <span class="toggle-label" id="chat-label">💬 Chatbot Assistant</span>
+                <span class="toggle-label" id="chat-label">💬 Asistente de Reservas</span>
             </div>
 
             <!-- Booking Form -->
             <form id="booking-form">
                 <div class="form-group">
-                    <label for="name">Full Name *</label>
+                    <label for="name">Nombre Completo *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address *</label>
+                    <label for="email">Correo Electrónico *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone Number *</label>
+                    <label for="phone">Número de Teléfono *</label>
                     <input type="tel" id="phone" name="phone" placeholder="+34660989898" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="date">Select Date *</label>
+                    <label for="date">Selecciona Fecha *</label>
                     <input type="date" id="date" name="date" required min="">
                 </div>
 
                 <div class="form-group">
-                    <label>Available Time Slots *</label>
+                    <label>Horarios Disponibles *</label>
                     <div class="time-slots-container">
                         <div class="time-slots-grid" id="time-slots-grid">
-                            <!-- Time slots will be populated here -->
+                            <!-- Los horarios se cargarán aquí -->
                         </div>
                     </div>
                 </div>
 
                 <button type="submit" class="btn" id="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Submit Booking
+                    <i class="fas fa-paper-plane"></i> Confirmar Reserva
                 </button>
             </form>
 
@@ -709,13 +709,13 @@
                     <div class="chat-message bot">
                         <div class="avatar">🤖</div>
                         <div class="chat-bubble">
-                            <p>Hello! I'm your booking assistant. You can ask me to help you book an appointment.</p>
-                            <p><strong>Try saying:</strong></p>
+                            <p>¡Hola! Soy tu asistente de reservas. Puedo ayudarte a reservar una cita.</p>
+                            <p><strong>Prueba diciendo:</strong></p>
                             <ul>
-                                <li>"Book me an appointment"</li>
-                                <li>"I need to schedule a meeting"</li>
-                                <li>"Available times tomorrow"</li>
-                                <li>"My name is John, email john@example.com, phone +60123456789"</li>
+                                <li>"Resérvame una cita"</li>
+                                <li>"Necesito programar una reunión"</li>
+                                <li>"Horarios disponibles para mañana"</li>
+                                <li>"Me llamo Juan, correo juan@ejemplo.com, teléfono +34612345678"</li>
                             </ul>
                         </div>
                     </div>
@@ -727,14 +727,14 @@
                         <span class="typing-dot"></span>
                         <span class="typing-dot"></span>
                     </div>
-                    Assistant is typing...
+                    El asistente está escribiendo...
                 </div>
 
                 <div class="chat-input-container">
                     <textarea 
                         id="chat-input" 
                         class="chat-input" 
-                        placeholder="Type your message here..."
+                        placeholder="Escribe tu mensaje aquí..."
                         rows="1"></textarea>
                     <button type="button" id="chat-send-btn" class="chat-send-btn">
                         <i class="fas fa-paper-plane"></i>
@@ -743,32 +743,32 @@
             </div>
 
             <div class="business-hours">
-                <h4><i class="fas fa-clock"></i> Business Hours</h4>
+                <h4><i class="fas fa-clock"></i> Horario de Atención</h4>
                 <ul>
-                    <li><strong>Days:</strong> Monday to Friday</li>
-                    <li><strong>Hours:</strong> 9:30 AM - 9:30 PM Madrid time</li>
-                    <li><strong>Closed:</strong> 12:30 PM - 2:30 PM (lunch), 6:30 PM - 8:30 PM (dinner)</li>
+                    <li><strong>Días:</strong> Lunes a Viernes</li>
+                    <li><strong>Horario:</strong> 9:30 - 21:30 (hora Madrid)</li>
+                    <li><strong>Cerrado:</strong> 12:30 - 14:30 (almuerzo), 18:30 - 20:30 (cena)</li>
                 </ul>
             </div>
 
             <div class="test-scenarios">
-                <h3><i class="fas fa-flask"></i> Quick Test Scenarios</h3>
-                <p>Click any button to auto-fill the form with test data:</p>
+                <h3><i class="fas fa-flask"></i> Escenarios de Prueba</h3>
+                <p>Haz clic en cualquier botón para completar el formulario con datos de prueba:</p>
 
                 <button class="scenario-btn success" onclick="fillForm('valid')">
-                    ✅ Valid Booking
+                    ✅ Reserva Válida
                 </button>
 
                 <button class="scenario-btn error" onclick="fillForm('weekend')">
-                    ❌ Weekend Booking
+                    ❌ Reserva Fin de Semana
                 </button>
 
                 <button class="scenario-btn error" onclick="fillForm('invalid-email')">
-                    ❌ Invalid Email
+                    ❌ Email Inválido
                 </button>
 
                 <button class="scenario-btn error" onclick="fillForm('missing-fields')">
-                    ❌ Missing Fields
+                    ❌ Campos Vacíos
                 </button>
             </div>
         </div>
@@ -974,7 +974,7 @@
                     botMessage = data.message;
                 } else {
                     // Fallback error message
-                    botMessage = 'Sorry, I encountered an error. Please try again.';
+                    botMessage = 'Lo siento, he encontrado un error. Por favor, inténtalo de nuevo.';
                 }
                 
                 addChatMessage(botMessage, false);
@@ -982,7 +982,7 @@
             } catch (error) {
                 console.error('Chat error:', error);
                 hideTypingIndicator();
-                addChatMessage('Sorry, I encountered an error. Please try again.', false);
+                addChatMessage('Lo siento, he encontrado un error. Por favor, inténtalo de nuevo.', false);
             } finally {
                 // Re-enable send button
                 sendBtn.disabled = false;
@@ -998,21 +998,21 @@
         // Test data scenarios
         const testScenarios = {
             valid: {
-                name: 'John Doe',
-                email: 'john@example.com',
-                phone: '+60123456789',
+                name: 'Juan Pérez',
+                email: 'juan@ejemplo.com',
+                phone: '+34612345678',
                 date: getNextWeekday()
             },
             weekend: {
-                name: 'Weekend User',
-                email: 'weekend@example.com',
-                phone: '+60123456790',
+                name: 'Usuario Fin de Semana',
+                email: 'findesemana@ejemplo.com',
+                phone: '+34612345679',
                 date: getNextWeekend()
             },
             'invalid-email': {
-                name: 'Bad Email User',
-                email: 'invalid-email',
-                phone: '+60123456793',
+                name: 'Usuario Email Inválido',
+                email: 'email-invalido',
+                phone: '+34612345680',
                 date: getNextWeekday()
             },
             'missing-fields': {
@@ -1090,13 +1090,13 @@
             selectedDate.setHours(0, 0, 0, 0);
 
             if (selectedDate < today) {
-                timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #dc2626; font-weight: 500;"><i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>Cannot book appointments for dates earlier than today</div>';
+                timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #dc2626; font-weight: 500;"><i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>No se puede reservar para fechas anteriores a hoy</div>';
                 submitBtn.disabled = true;
                 return;
             }
 
             // Show loading state
-            timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #6b7280;">Loading time slots...</div>';
+            timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #6b7280;">Cargando horarios disponibles...</div>';
             submitBtn.disabled = true;
 
             // Check for holidays and get available slots
@@ -1128,14 +1128,14 @@
                         availableSlots = data.availableSlots || [];
                         loadTimeSlots(availableSlots);
                     } else {
-                        showToast(data.error || 'Failed to check date availability', 'error');
-                        timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #dc2626;">Error loading time slots</div>';
+                        showToast(data.error || 'Error al verificar disponibilidad', 'error');
+                        timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #dc2626;">Error al cargar los horarios</div>';
                     }
                 })
                 .catch(error => {
                     console.error('Error checking date:', error);
-                    showToast('Error checking date availability', 'error');
-                    timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #dc2626;">Error loading time slots</div>';
+                    showToast('Error al verificar disponibilidad de la fecha', 'error');
+                    timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #dc2626;">Error al cargar los horarios</div>';
                 });
         }
 
@@ -1144,7 +1144,7 @@
             const submitBtn = document.getElementById('submit-btn');
 
             if (!slots || slots.length === 0) {
-                timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #6b7280;">No time slots available for this date</div>';
+                timeSlotsGrid.innerHTML = '<div style="text-align: center; padding: 20px; color: #6b7280;">No hay horarios disponibles para esta fecha</div>';
                 submitBtn.disabled = true;
                 return;
             }
@@ -1159,7 +1159,7 @@
 
                 if (slot.available === false) {
                     slotElement.classList.add('booked');
-                    slotElement.title = 'This slot is already booked';
+                    slotElement.title = 'Este horario ya está reservado';
                 } else {
                     slotElement.addEventListener('click', () => selectTimeSlot(slotElement, slot.time));
                 }
@@ -1197,7 +1197,7 @@
             e.preventDefault();
 
             if (!selectedTimeSlot) {
-                showToast('Please select a time slot', 'error');
+                showToast('Por favor selecciona un horario', 'error');
                 return;
             }
 
@@ -1212,7 +1212,7 @@
 
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
             submitButton.disabled = true;
 
             fetch(MAIN_URL_MAKE_BOOKING, {
@@ -1227,7 +1227,7 @@
                     console.log('Response:', data);
 
                     if (data.success) {
-                        showToast(data.confirmationMessage || 'Booking confirmed!', 'success');
+                        showToast(data.confirmationMessage || '¡Reserva confirmada!', 'success');
 
                         // Check if in iframe mode and send signal to parent
                         const urlParams = new URLSearchParams(window.location.search);
@@ -1253,7 +1253,7 @@
                         const submitButton = this.querySelector('button[type="submit"]');
                         submitButton.disabled = true;
                     } else {
-                        showToast(data.error || data.message || 'Booking failed', 'error');
+                        showToast(data.error || data.message || 'Error en la reserva', 'error');
                     }
                 })
                 .catch(error => {
